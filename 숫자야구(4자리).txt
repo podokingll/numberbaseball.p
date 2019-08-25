@@ -1,0 +1,81 @@
+# 연습용 숫자 야구 게임
+import random
+game = random.sample(range(1,10), 4)
+
+try_count = 0
+strike_count = 0
+ball_count = 0
+
+print("숫자 야구 게임을 시작해봐요. ⁽⁽◝( ˙ ꒳ ˙ )◜⁾⁾")
+print("-----------------------------------------------")
+print("규칙설명 : 1에서 9까지 마음에 드는 숫자를 4개 입력합니다.")
+print("단, 중복이 존재해서는 안됩니다.")
+
+while(strike_count < 4):
+    num = input("숫자를 입력해주세요. : ")
+
+    if(num[0] == num[1] == num[2] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0] == num[1] == num[2]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0] == num[1] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0] == num[2] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[1] == num[2] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0] == num[1]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0]== num[2]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[0] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[1] == num[2]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[1] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    elif(num[2] == num[3]):
+        print("숫자가 중복됩니다. 겹치는 수 없이 다시 써 주세요.")
+        try_count += 1
+        continue
+    else :
+        pass
+
+    strike_count = 0
+    ball_count = 0
+
+    for x in range(0, 4):
+        for y in range(0, 4):
+            if(num[x] == str(game[y]) and x == y):
+                strike_count += 1
+            elif(num[x] == str(game[y]) and x != y):
+
+                ball_count += 1
+
+    print(strike_count, "스트라이크!", ball_count, "볼!")
+    try_count += 1
+
+print("---------------------------------------------------------------")
+print("(づ￣ ³￣)づ", try_count, "번 만에 맞추셨습니다! (づ￣ ³￣)づ")
+    
+        
